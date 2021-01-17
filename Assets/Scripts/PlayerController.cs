@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 currentPosition;
     void Start(){
         newRotation = new Vector3(0,90f,0);
-        this.transform.Rotate(newRotation);
+        transform.Rotate(newRotation);
     }
     public void Update()
     {
@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
         switch(other.tag){
             case "RotateLeft": 
                 // transform.position = currentPosition;
-                transform.localRotation =  Quaternion.Euler(new Vector3(0, 0, 0));
+                transform.localRotation =  Quaternion.Euler(new Vector3(0, 0 * Time.deltaTime, 0));
                 // transform.Rotate(0,0,0); 
                 Debug.Log("I will rotate left");
                 // _controller.enabled = true; 
