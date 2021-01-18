@@ -2,17 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PathChanger : MonoBehaviour
-{
-    //public GameObject player;
-    // Start is called before the first frame update
+public class PathChanger : MonoBehaviour{
+   
     void OnTriggerEnter(Collider other){
-        Debug.Log("Do something i am the trigger..");
-        // PlayerController player = other.GetComponent<PlayerController>();
-        // player.RotatePlayer(0f);
-        //player.transform.Rotate(0,0,0);
-        Destroy(gameObject);
-
-        // camera.transform.Rotate(0,-90f,0);
+        
+        PlayerController player = other.GetComponent<PlayerController>();
+        // if(player.rotateL == true){
+        //     transform.gameObject.tag = "RotateRight";
+        // }
+        // if(player.rotateR == true){
+        //     transform.gameObject.tag = "RotateLeft";
+        // }
+      
+       Destroy(gameObject);
     }
 }

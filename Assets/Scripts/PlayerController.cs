@@ -5,7 +5,6 @@ public class PlayerController : MonoBehaviour
 {
     public CharacterController controller;
     public float speed = 10;
-    public float _rotationSpeed = 90f;
  
     private Vector3 rotation;
     private Vector3 newRotation;
@@ -13,46 +12,73 @@ public class PlayerController : MonoBehaviour
 
     public GameObject CameraToRotate;
     public float rotationSpeed = 2.5f;
-    private bool rotateL = false;
+    public bool rotateL = false;
     // private bool isRotating = false;
-    private bool rotateR =  false;
+    public bool rotateR =  false;
     private bool groundedPlayer;
     //private Vector3 playerVelocity;
-    public float gravity = -9.81f;
-    public float jumpHeight = 1.0f;
+    public float gravity = -9.8f;
+    public float jumpHeight = 10.0f;
     private Vector3 move;
     private bool jump;
+    public Animator animator;
+    public GameObject childrenToRotate;
+    private Vector3 moveAir;
+    bool facingRight =  true;
+
+    private void Awake() {
+        controller = GetComponent<CharacterController>();
+        if (controller == null){
+            Debug.LogError("Character Controller not found.");
+            enabled = false;
+        }
+    }
     void Start(){
         // newRotation = new Vector3(0,90f,0);
         // transform.Rotate(newRotation);
+        move.y = 0f;
     }
     void Update(){
+        if (controller == null)
+            return;
         //capture controls here:
-        move = new Vector3(0, 0, Input.GetAxisRaw("Horizontal") * Time.deltaTime);
-        jump =  Input.GetButtonDown("Jump");
-        
-        //Vector3 move = new Vector3(0, 0, Input.GetAxisRaw("Horizontal") * Time.deltaTime);
-        move = transform.TransformDirection(move);
-        controller.Move(move * speed);
+        move = new Vector3(0, 0,0);
+        moveAir = Vector3.zero;
+        jump =  Input.GetKeyDown(KeyCode.W);
+        move.z =  Input.GetAxisRaw("Horizontal") * speed;
+        //controller.Move(move * speed);
         currentPosition = transform.position;
-               
+       // Debug.Log(move.x);
         groundedPlayer = controller.isGrounded;
-        
-        if (groundedPlayer && move.y < 0){
-            move.y = 0f;
+        if(move.z < 0 && facingRight || move.x < 0 && facingRight){
+            flip();
+        }else if(move.z>0 && !facingRight || move.x > 0 && !facingRight){
+            flip();
         }
-         if ( jump && groundedPlayer){
-            move.y += Mathf.Sqrt(jumpHeight * -3.0f * gravity);
+        if (groundedPlayer){
+            Debug.Log("Player is grounded");
+            
+            moveAir.y = 0f;
+            if ( jump ){
+                moveAir.y = jumpHeight;
+               // moveAir.y = jumpHeight + speed * Time.deltaTime;
+                //move.y = jumpHeight * Time.deltaTime;
+                //move.y += Mathf.Sqrt(jumpHeight * 3.0f * Time.deltaTime);
+            }
+        }else{
+            moveAir.y = gravity * Time.deltaTime;
         }
-        //Debug.Log(playerVelocity.y);
-        move.y += gravity * Time.deltaTime;
+        if(rotateL == true){
+            StartCoroutine("rotateLeft");
+        }
+        if(rotateR == true){
+            StartCoroutine("rotateRight");
+        }
+        move = transform.TransformDirection(move);
         controller.Move(move * Time.deltaTime);
-        // if (rotateL == true){
-        //     StartCoroutine("rotateLeft");
-        // }
-        // if (rotateR == true){
-        //      StartCoroutine("rotateRight");
-        // }
+        controller.Move(moveAir *Time.deltaTime);
+        //this will fix the animation if player rotates:
+        animator.SetFloat("speed", Mathf.Abs(move.x + move.z*100.0f));
         
     }
     void FixedUpdate(){
@@ -79,5 +105,10 @@ public class PlayerController : MonoBehaviour
         transform.localRotation = Quaternion.Slerp(transform.localRotation,Quaternion.Euler(new Vector3(0,90, 0)), Time.deltaTime * rotationSpeed);
         CameraToRotate.transform.localRotation = Quaternion.Slerp(CameraToRotate.transform.localRotation,Quaternion.Euler(new Vector3(0,0, 0)), Time.deltaTime * rotationSpeed);
         yield return null;
+    }
+    void flip(){
+        facingRight = !facingRight;
+        childrenToRotate.transform.Rotate(0f,180f,0f);
+        // this.gameObject.transform.rotation = Quaternion.Euler(0f,180f,0f);
     }
 }
