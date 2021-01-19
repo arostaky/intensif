@@ -42,6 +42,7 @@ public class PlayerController : MonoBehaviour
         if (controller == null)
             return;
         //capture controls here:
+        //these two we should remove and put the movement under is grounded
         move = new Vector3(0, 0,0);
         moveAir = Vector3.zero;
         jump =  Input.GetKeyDown(KeyCode.W);
