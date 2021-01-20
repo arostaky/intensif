@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -52,25 +52,25 @@ public class PlayerControllerv2 : MonoBehaviour{
          moveDirection.y -= gravity * Time.deltaTime;
          controller.Move(moveDirection * Time.deltaTime);
      }
-     void flip(){
-        if(facingRight == true && rotateL == true){
+     void flip(){        
+        if(facingRight == true && rotateL == true && rotateR == false){
            childrenToRotate.transform.localRotation = Quaternion.Euler(0f,180f,0f);
         }
-        if(facingRight == true && rotateL == false){
+        if(facingRight == true && rotateL == false && rotateR == false){
              childrenToRotate.transform.localRotation = Quaternion.Euler(0f,0f,0f);
         }
-        if(facingRight == false && rotateL == false){
+        if(facingRight == false && rotateL == false && rotateR == false){
               childrenToRotate.transform.localRotation = Quaternion.Euler(0f,180f,0f);
         }
-        if(facingRight == false && rotateL == true){
+        if(facingRight == false && rotateL == true && rotateR == false){
              childrenToRotate.transform.localRotation = Quaternion.Euler(0f,0f,0f);
         }
-        //facingRight = !facingRight;
-        //childrenToRotate.transform.rotation = Quaternion.Euler(0f,180f,0f);
-        //childrenToRotate.transform.Rotate(0f,180f,0f);
-       
-        //transform.Rotate(0f,180f,0f);
-       // gameObject.transform.rotation = Quaternion.Euler(0f,180f,0f);
+        if(facingRight == false && rotateL == false && rotateR == true){
+             childrenToRotate.transform.localRotation = Quaternion.Euler(0f,0f,0f);
+        }
+        if(facingRight == true && rotateL == false && rotateR == true){
+             childrenToRotate.transform.localRotation = Quaternion.Euler(0f,180f,0f);
+        }
     }
     void OnTriggerEnter(Collider other) {
         switch(other.tag){
