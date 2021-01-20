@@ -34,9 +34,13 @@ public class PlayerControllerv2 : MonoBehaviour{
              
          }
          //adding flip condition:
-        if(moveDirection.z < 0 && facingRight){
+        Debug.Log(moveDirection.z);
+        Debug.Log("facingright?" + facingRight);
+        if(moveDirection.z < 0 ){
+            facingRight = true;
             flip();
-        }else if(moveDirection.z > 0 && !facingRight){
+        }else if(moveDirection.z > 0){
+            facingRight = false;
             flip();
         }
         if(rotateL == true){
@@ -49,10 +53,24 @@ public class PlayerControllerv2 : MonoBehaviour{
          controller.Move(moveDirection * Time.deltaTime);
      }
      void flip(){
-        facingRight = !facingRight;
+        if(facingRight == true && rotateL == true){
+           childrenToRotate.transform.localRotation = Quaternion.Euler(0f,180f,0f);
+        }
+        if(facingRight == true && rotateL == false){
+             childrenToRotate.transform.localRotation = Quaternion.Euler(0f,0f,0f);
+        }
+        if(facingRight == false && rotateL == false){
+              childrenToRotate.transform.localRotation = Quaternion.Euler(0f,180f,0f);
+        }
+        if(facingRight == false && rotateL == true){
+             childrenToRotate.transform.localRotation = Quaternion.Euler(0f,0f,0f);
+        }
+        //facingRight = !facingRight;
         //childrenToRotate.transform.rotation = Quaternion.Euler(0f,180f,0f);
-        childrenToRotate.transform.Rotate(0f,180f,0f);
-        // this.gameObject.transform.rotation = Quaternion.Euler(0f,180f,0f);
+        //childrenToRotate.transform.Rotate(0f,180f,0f);
+       
+        //transform.Rotate(0f,180f,0f);
+       // gameObject.transform.rotation = Quaternion.Euler(0f,180f,0f);
     }
     void OnTriggerEnter(Collider other) {
         switch(other.tag){
