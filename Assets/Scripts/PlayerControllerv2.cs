@@ -72,23 +72,28 @@ public class PlayerControllerv2 : MonoBehaviour{
      }
      void flip(){        
         if(facingRight == true && rotateL == true && rotateR == false){
-           childrenToRotate.transform.localRotation = Quaternion.Euler(0f,195f,0f);
+           RotationBack(195f);
         }
         if(facingRight == true && rotateL == false && rotateR == false){
-             childrenToRotate.transform.localRotation = Quaternion.Euler(0f,15f,0f);
+            RotationBack(15f);
         }
         if(facingRight == false && rotateL == false && rotateR == false){
-              childrenToRotate.transform.localRotation = Quaternion.Euler(0f,195f,0f);
+            RotationBack(195f);
         }
         if(facingRight == false && rotateL == true && rotateR == false){
-             childrenToRotate.transform.localRotation = Quaternion.Euler(0f,15f,0f);
+            RotationBack(15f);
         }
         if(facingRight == false && rotateL == false && rotateR == true){
-             childrenToRotate.transform.localRotation = Quaternion.Euler(0f,15f,0f);
+             RotationBack(15f);
         }
         if(facingRight == true && rotateL == false && rotateR == true){
-             childrenToRotate.transform.localRotation = Quaternion.Euler(0f,195f,0f);
+            RotationBack(195f);
+            //childrenToRotate.transform.localRotation = Quaternion.Euler(0f,195f,0f);
         }
+    }
+    void RotationBack(float val){
+        // childrenToRotate.transform.Rotate(0f,val,0f);
+        childrenToRotate.transform.localRotation = Quaternion.Euler(0f,val,0f);
     }
     void OnTriggerEnter(Collider other) {
         switch(other.tag){
