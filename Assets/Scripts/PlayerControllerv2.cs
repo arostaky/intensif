@@ -136,13 +136,13 @@ public class PlayerControllerv2 : MonoBehaviour{
             else if(moveDirection == Vector3.zero){
                 Idle();
             }
-            if(Input.GetButton("Fire2")){
+            if(Input.GetButtonDown("Fire2")){
                 Jump();
                 animator.SetBool("Jump", true);
                 isJumping = true;
             }
         }
-        if(!isGrounded && isJumping){
+        if(Input.GetButtonUp("Fire2") && isJumping){
             animator.SetBool("Jump", false);
             isJumping = false;
         }
