@@ -72,7 +72,7 @@ public class PlayerControllerv2 : MonoBehaviour{
      }
      void flip(){        
         if(facingRight == true && rotateL == true && rotateR == false){
-           RotationBack(195f);
+           RotationBack(15f);
         }
         if(facingRight == true && rotateL == false && rotateR == false){
             RotationBack(15f);
@@ -81,13 +81,13 @@ public class PlayerControllerv2 : MonoBehaviour{
             RotationBack(195f);
         }
         if(facingRight == false && rotateL == true && rotateR == false){
-            RotationBack(15f);
+            RotationBack(195f);
         }
         if(facingRight == false && rotateL == false && rotateR == true){
-             RotationBack(15f);
+             RotationBack(195f);
         }
         if(facingRight == true && rotateL == false && rotateR == true){
-            RotationBack(195f);
+            RotationBack(15f);
             //childrenToRotate.transform.localRotation = Quaternion.Euler(0f,195f,0f);
         }
     }
@@ -108,12 +108,12 @@ public class PlayerControllerv2 : MonoBehaviour{
         }
     }
     IEnumerator rotateLeft(){
-        transform.localRotation = Quaternion.Slerp(transform.localRotation,Quaternion.Euler(new Vector3(0,0,0)), Time.deltaTime * rotationSpeed);
-        CameraToRotate.transform.localRotation = Quaternion.Slerp(CameraToRotate.transform.localRotation,Quaternion.Euler(new Vector3(0,-90,0)), Time.deltaTime * rotationSpeed);
+        transform.localRotation = Quaternion.Slerp(transform.localRotation,Quaternion.Euler(new Vector3(0,-180,0)), Time.deltaTime * rotationSpeed);
+        CameraToRotate.transform.localRotation = Quaternion.Slerp(CameraToRotate.transform.localRotation,Quaternion.Euler(new Vector3(0,90,0)), Time.deltaTime * rotationSpeed);
         yield return null;
     }
     IEnumerator rotateRight(){
-        transform.localRotation = Quaternion.Slerp(transform.localRotation,Quaternion.Euler(new Vector3(0,90,0)), Time.deltaTime * rotationSpeed);
+        transform.localRotation = Quaternion.Slerp(transform.localRotation,Quaternion.Euler(new Vector3(0,0,0)), Time.deltaTime * rotationSpeed);
         CameraToRotate.transform.localRotation = Quaternion.Slerp(CameraToRotate.transform.localRotation,Quaternion.Euler(new Vector3(0,0,0)), Time.deltaTime * rotationSpeed);
         yield return null;
     }
