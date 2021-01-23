@@ -142,7 +142,7 @@ public class PlayerControllerv2 : MonoBehaviour{
                 isJumping = true;
             }
         }
-        if(Input.GetButtonUp("Fire2") && isJumping){
+        if(!isGrounded && isJumping){
             animator.SetBool("Jump", false);
             isJumping = false;
         }
