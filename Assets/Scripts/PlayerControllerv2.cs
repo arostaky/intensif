@@ -24,6 +24,7 @@ public class PlayerControllerv2 : MonoBehaviour{
     [SerializeField] private LayerMask groundMask;
     [SerializeField] private float jumpHeight;
     private bool isJumping = false;
+    public bool playerIsDead = false;
     private void Awake() {
         controller = GetComponent<CharacterController>();
         if (controller == null){
@@ -48,7 +49,7 @@ public class PlayerControllerv2 : MonoBehaviour{
         //          moveDirection.y = jumpSpeed;
         Move();
          //adding flip condition:
-        Debug.Log(moveDirection.z);
+        // Debug.Log(moveDirection.z);
         // Debug.Log("facingright?" + facingRight);
         if(moveDirection.z < 0 ){
             facingRight = true;
@@ -63,7 +64,7 @@ public class PlayerControllerv2 : MonoBehaviour{
         if(rotateR == true){
             StartCoroutine("rotateRight");
         }
-        Debug.Log("is jumping is? "+ isJumping);
+        // Debug.Log("is jumping is? "+ isJumping);
         if(Input.GetButtonDown("Fire1")){
             Attack();
         }
@@ -168,5 +169,8 @@ public class PlayerControllerv2 : MonoBehaviour{
     }
     private void Attack(){
         animator.SetTrigger("Attack");
+    }
+    public void TakeDamage(int damage){
+
     }
 }

@@ -7,6 +7,10 @@ TagManager:
   - trigger
   - RotateLeft
   - RotateRight
+  - Grenade
+  - SmokeExplosion
+  - Enemy
+  - Bullet
   layers:
   - Default
   - TransparentFX
