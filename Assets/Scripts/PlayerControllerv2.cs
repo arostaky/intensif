@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class PlayerControllerv2 : MonoBehaviour{
     [SerializeField] private float moveSpeed = 0.0F;
     [SerializeField] private float walkSpeed = 3.0F;
@@ -180,6 +180,31 @@ public class PlayerControllerv2 : MonoBehaviour{
         animator.SetTrigger("Attack");
     }
     public void TakeDamage(int damage){
-
+        currentHealth -= damage;
+        healthBar.setHealth(currentHealth);
+        if(currentHealth<=0){
+            countLives();
+            Die();
+        }
+    }
+    public void countLives(){
+        lives--;
+    }
+    public void Die(){
+        controller.enabled = false;
+        animator.SetBool("Death", true);
+        // mouvement.y = 0;
+        // mouvement.x = 0;
+        // Destroy(gameObject);
+        // Invoke("MoveBody", reSpawnTime);
+        playerIsDead = true;
+        healthBar.setLives(lives);
+        if(lives <= 0){
+            Debug.Log("die");
+            // SceneManager.LoadScene("Menu");
+            // LevelManager levelmanager = GetComponent<LevelManager>();
+            // levelmanager.restart();
+        }
+        // Debug.LogError("die");
     }
 }
