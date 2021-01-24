@@ -205,7 +205,7 @@ public class PlayerControllerv2 : MonoBehaviour{
         lives--;
     }
     public void Die(){
-        //controller.enabled = false;
+        // controller.enabled = false;
         animator.SetBool("Death", true);
         // mouvement.y = 0;
         // mouvement.x = 0;
