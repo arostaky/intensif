@@ -25,6 +25,10 @@ public class PlayerControllerv2 : MonoBehaviour{
     [SerializeField] private float jumpHeight;
     private bool isJumping = false;
     public bool playerIsDead = false;
+    public int maxHealth = 100;
+    public int currentHealth;
+    public HealthBar healthBar;
+    public int lives = 3;
     private void Awake() {
         controller = GetComponent<CharacterController>();
         if (controller == null){
@@ -33,6 +37,11 @@ public class PlayerControllerv2 : MonoBehaviour{
         }
         controller = GetComponent<CharacterController>();
         animator = GetComponentInChildren<Animator>();
+    }
+    void Start(){
+        currentHealth = maxHealth;
+        healthBar.setMaxHealth(maxHealth);
+        healthBar.setLives(lives);
     }
      void Update() {
          //original: CharacterController controller = GetComponent<CharacterController>();
