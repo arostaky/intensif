@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-public class Enemy : MonoBehaviour
+public class EnemyRotate : MonoBehaviour
 {
     private string currentState = "IdleState";
     private Transform target;
@@ -51,6 +51,7 @@ public class Enemy : MonoBehaviour
 
         }
         else if(currentState == "AttackState"){
+            transform.rotation = Quaternion.Euler(0, 90, 0);
             animator.SetBool("isAttacking", true);
 
             if (distance > attackRange)

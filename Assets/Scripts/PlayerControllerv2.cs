@@ -28,6 +28,7 @@ public class PlayerControllerv2 : MonoBehaviour{
     public int maxHealth = 100;
     public int currentHealth;
     public HealthBar healthBar;
+    private bool isShooting = false;
     public int lives = 3;
     private void Awake() {
         controller = GetComponent<CharacterController>();
@@ -74,7 +75,7 @@ public class PlayerControllerv2 : MonoBehaviour{
             StartCoroutine("rotateRight");
         }
         // Debug.Log("is jumping is? "+ isJumping);
-        if(Input.GetButtonDown("Fire1")){
+        if(Input.GetButtonDown("Fire1") && isShooting == false){
             Attack();
         }
         // moveDirection.y -= gravity * Time.deltaTime;
@@ -184,6 +185,7 @@ public class PlayerControllerv2 : MonoBehaviour{
     }
     private void Attack(){
         animator.SetTrigger("Attack");
+        isShooting = true;
     }
     public void TakeDamage(int damage){
         currentHealth -= damage;
