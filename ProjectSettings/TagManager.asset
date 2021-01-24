@@ -11,6 +11,8 @@ TagManager:
   - SmokeExplosion
   - Enemy
   - Bullet
+  - deadFactorOne
+  - deadFactorTwo
   layers:
   - Default
   - TransparentFX

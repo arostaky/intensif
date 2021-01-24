@@ -115,6 +115,12 @@ public class PlayerControllerv2 : MonoBehaviour{
                 rotateL = false;
                 rotateR = true;
                 break;
+            case "deadFactorOne":
+                TakeDamage(20);
+                break;
+            case "deadFactorTwo":
+                TakeDamage(40);
+                break;
         }
     }
     IEnumerator rotateLeft(){
