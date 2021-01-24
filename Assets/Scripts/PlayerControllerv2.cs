@@ -30,6 +30,8 @@ public class PlayerControllerv2 : MonoBehaviour{
     public HealthBar healthBar;
     private bool isShooting = false;
     public int lives = 3;
+    // Rigidbody m_Rigidbody;
+
     private void Awake() {
         controller = GetComponent<CharacterController>();
         if (controller == null){
@@ -43,6 +45,8 @@ public class PlayerControllerv2 : MonoBehaviour{
         currentHealth = maxHealth;
         healthBar.setMaxHealth(maxHealth);
         healthBar.setLives(lives);
+        // m_Rigidbody = GetComponent<Rigidbody>();
+        // m_Rigidbody.constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationZ;
     }
      void Update() {
          //original: CharacterController controller = GetComponent<CharacterController>();
@@ -122,6 +126,9 @@ public class PlayerControllerv2 : MonoBehaviour{
             case "deadFactorTwo":
                 TakeDamage(40);
                 break;
+            case "goLevelTwo":
+                SceneManager.LoadScene("Level_Two");
+                break;
         }
     }
     IEnumerator rotateLeft(){
@@ -138,7 +145,6 @@ public class PlayerControllerv2 : MonoBehaviour{
         isGrounded = Physics.CheckSphere(transform.position, groundCheckDistance, groundMask);
         moveDirection = new Vector3(0, 0, Input.GetAxis("Horizontal"));
         moveDirection = transform.TransformDirection(moveDirection);
-
         if(isGrounded && velocity.y < 0){
             velocity.y = -2f;
         }

@@ -13,6 +13,7 @@ TagManager:
   - Bullet
   - deadFactorOne
   - deadFactorTwo
+  - goLevelTwo
   layers:
   - Default
   - TransparentFX
