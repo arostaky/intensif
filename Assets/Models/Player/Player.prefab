@@ -48,7 +48,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1466152896733974474}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -267,6 +267,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   jumpHeight: 0.6
+  playerIsDead: 0
+  maxHealth: 100
+  currentHealth: 0
+  healthBar: {fileID: 0}
+  lives: 3
 --- !u!114 &1466152897742369513
 MonoBehaviour:
   m_ObjectHideFlags: 0

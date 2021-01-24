@@ -51,7 +51,7 @@ public class EnemyRotate : MonoBehaviour
 
         }
         else if(currentState == "AttackState"){
-            transform.rotation = Quaternion.Euler(0, 90, 0);
+            transform.localRotation = Quaternion.Euler(0, 90, 0);
             animator.SetBool("isAttacking", true);
 
             if (distance > attackRange)
