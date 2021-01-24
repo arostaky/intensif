@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9173944834103184129}
   - component: {fileID: 5115115115814762374}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -149,7 +149,7 @@ GameObject:
   - component: {fileID: 7301830268174067161}
   - component: {fileID: 3584591277800297893}
   - component: {fileID: 4442228028510132123}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -244,7 +244,7 @@ GameObject:
   - component: {fileID: 4368181286390661283}
   - component: {fileID: 4368181286390661285}
   - component: {fileID: 4368181286390661284}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4998,7 +4998,7 @@ GameObject:
   - component: {fileID: 4368181288495099548}
   - component: {fileID: 4368181288495099550}
   - component: {fileID: 4368181288495099549}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Beam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9753,9 +9753,9 @@ GameObject:
   - component: {fileID: 5672106388969919563}
   - component: {fileID: -6072145233438267825}
   - component: {fileID: 4828531099958997801}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Enemy_1_Bullet
-  m_TagString: Bullet
+  m_TagString: enemyBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

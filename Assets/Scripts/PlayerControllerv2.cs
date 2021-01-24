@@ -28,7 +28,7 @@ public class PlayerControllerv2 : MonoBehaviour{
     public int maxHealth = 100;
     public int currentHealth;
     public HealthBar healthBar;
-    private bool isShooting = false;
+    private int shootOnce = 0;
     public int lives = 3;
     // Rigidbody m_Rigidbody;
     
@@ -79,8 +79,13 @@ public class PlayerControllerv2 : MonoBehaviour{
             StartCoroutine("rotateRight");
         }
         // Debug.Log("is jumping is? "+ isJumping);
-        if(Input.GetButtonDown("Fire1") && isShooting == false){
+        if(Input.GetButtonDown("Fire1")){
             Attack();
+            shootOnce+=1;
+            if(shootOnce>1){
+                shootOnce = 0;
+            }
+            
         }
         // moveDirection.y -= gravity * Time.deltaTime;
          //animator.SetFloat("speed", Mathf.Abs(moveDirection.x + moveDirection.z));
@@ -190,8 +195,11 @@ public class PlayerControllerv2 : MonoBehaviour{
         velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
     }
     private void Attack(){
-        animator.SetTrigger("Attack");
-        isShooting = true;
+        if(shootOnce == 0){
+            animator.SetTrigger("Attack");
+        }else{
+            animator.SetTrigger("Attack2");
+        }
     }
     public void TakeDamage(int damage){
         currentHealth -= damage;

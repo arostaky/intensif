@@ -55,7 +55,7 @@ public class Enemy3 : MonoBehaviour
         }
         else if(currentState == "AttackState"){
             animator.SetBool("isAttacking", true);
-            AttackPlayer();
+            //AttackPlayer();
             shootOnce+=1;
             if(shootOnce>50){
                 shootOnce = 0;
