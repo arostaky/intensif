@@ -60740,11 +60740,11 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1914205299507332}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -60838,7 +60838,7 @@ BoxCollider:
   m_GameObject: {fileID: 1914205299507332}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 4, y: 4, z: 2}
   m_Center: {x: -2, y: 2, z: 0.5}
@@ -60850,7 +60850,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1914205299507332}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 8d3e54f84e6f413439a47a0b492ce422, type: 2}
   m_CullingMode: 0
@@ -60868,7 +60868,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1914205299507332}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3be387ea5146d8b4593af10adc3c9e05, type: 3}
   m_Name: 
@@ -78547,6 +78547,26 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: e542e58cb1cd9054eabea93fd512edb8, type: 2}
     - target: {fileID: -8679921383154817045, guid: e060810b0c514d647aa5f3ab589ea406,
         type: 3}
+      propertyPath: m_RootOrder
+      value: 294
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e060810b0c514d647aa5f3ab589ea406,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.030656999
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e060810b0c514d647aa5f3ab589ea406,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.030656999
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e060810b0c514d647aa5f3ab589ea406,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.030656999
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e060810b0c514d647aa5f3ab589ea406,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: -10.1
       objectReference: {fileID: 0}
@@ -78559,6 +78579,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 7.65
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e060810b0c514d647aa5f3ab589ea406,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.26600838
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e060810b0c514d647aa5f3ab589ea406,
         type: 3}
@@ -78577,16 +78602,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e060810b0c514d647aa5f3ab589ea406,
         type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.26600838
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: e060810b0c514d647aa5f3ab589ea406,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 294
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: e060810b0c514d647aa5f3ab589ea406,
-        type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
@@ -78599,21 +78614,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: e060810b0c514d647aa5f3ab589ea406,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.030656999
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: e060810b0c514d647aa5f3ab589ea406,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.030656999
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: e060810b0c514d647aa5f3ab589ea406,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.030656999
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e060810b0c514d647aa5f3ab589ea406,
         type: 3}

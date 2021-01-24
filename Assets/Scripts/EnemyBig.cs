@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-public class Enemy3 : MonoBehaviour
+public class EnemyBig : MonoBehaviour
 {
     private string currentState = "IdleState";
     private Transform target;
@@ -60,10 +60,9 @@ public class Enemy3 : MonoBehaviour
             if(shootOnce>50){
                 shootOnce = 0;
             }
-        }else{
-        }
          if (distance > attackRange)
             currentState = "ChaseState";
+        }
     }
     public void TakeDamage(int damage){
         health-= damage;

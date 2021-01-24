@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenuv2.unity
     guid: 30c1fc676290f9144b99623023476bed
   - enabled: 1
-    path: Assets/Scenes/Option_Menu.unity
-    guid: 62aa52a0cb76f3346b9c065347836f94
+    path: Assets/Scenes/Option_Menuv2.unity
+    guid: a548580daeb8f4345b2ef4dd89f00ab5
   - enabled: 1
     path: Assets/Sci-Fi Modular Pack v1.23/Level_One.unity
     guid: 659ae1a61e288f348b1d69bf2c0fae32
