@@ -29,7 +29,7 @@ public class PlayerControllerv2 : MonoBehaviour{
     public int currentHealth;
     public HealthBar healthBar;
     private int shootOnce = 0;
-    public int lives = 3;
+    public int lives = 1;
     // Rigidbody m_Rigidbody;
     
     private void Awake() {
@@ -185,7 +185,7 @@ public class PlayerControllerv2 : MonoBehaviour{
     }
     private void Walk(){
         moveSpeed = walkSpeed;
-        animator.SetFloat("Speed",0.5f, 0.1f, Time.deltaTime);
+        animator.SetFloat("Speed",1, 0.1f, Time.deltaTime);
     }
     private void Run(){
         moveSpeed = runSpeed;
@@ -213,7 +213,7 @@ public class PlayerControllerv2 : MonoBehaviour{
         lives--;
     }
     public void Die(){
-        // controller.enabled = false;
+        controller.enabled = false;
         animator.SetBool("Death", true);
         // mouvement.y = 0;
         // mouvement.x = 0;
@@ -222,11 +222,13 @@ public class PlayerControllerv2 : MonoBehaviour{
         playerIsDead = true;
         healthBar.setLives(lives);
         if(lives <= 0){
-            Debug.Log("die");
-            // SceneManager.LoadScene("Menu");
-            // LevelManager levelmanager = GetComponent<LevelManager>();
-            // levelmanager.restart();
+           StartCoroutine(restartLevel());
+            
         }
         // Debug.LogError("die");
+    }
+    IEnumerator restartLevel(){
+        yield return new WaitForSeconds(5);
+        SceneManager.LoadScene("Level_One");
     }
 }

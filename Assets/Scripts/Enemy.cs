@@ -62,7 +62,7 @@ public class Enemy : MonoBehaviour
         if(health<=0){
            Die();
             Instantiate(explotionPrefab, transform.position, Quaternion.identity);
-            Destroy(explotionPrefab,0.5f);
+            // Destroy(explotionPrefab,0.5f);
             Instantiate(rewardPrefab, transform.position, Quaternion.identity);
         }
     }

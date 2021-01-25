@@ -17,6 +17,8 @@ public class EnemyRotate : MonoBehaviour
     public GameObject explotionPrefab;
     public float deadDelay = 4.0f;
     public float attackRange = 4.0f;
+
+    public GameObject childrenToRotate;
     //public float timeReward = 1.0f;
     
     void Start(){
@@ -51,8 +53,7 @@ public class EnemyRotate : MonoBehaviour
 
         }
         else if(currentState == "AttackState"){
-            transform.localRotation = Quaternion.Euler(0, 90, 0);
-            animator.SetBool("isAttacking", true);
+            attackPlayer();
 
             if (distance > attackRange)
                 currentState = "ChaseState";
@@ -84,6 +85,10 @@ public class EnemyRotate : MonoBehaviour
         //animator.SetBool("isDead", true);
         yield return new WaitForSeconds(deadDelay);
         Destroy(gameObject);
+    }
+    void attackPlayer(){
+        animator.SetBool("isAttacking", true);
+        childrenToRotate.transform.localRotation = Quaternion.Euler(0, -90, 0);
     }
     // IEnumerator showReward(){
     //     yield return new WaitForSeconds(timeReward);
