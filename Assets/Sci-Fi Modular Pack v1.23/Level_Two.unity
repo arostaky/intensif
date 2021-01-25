@@ -142,7 +142,7 @@ PrefabInstance:
     - target: {fileID: 6169696977278856876, guid: 3016897be250d544881e0a59186a958f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.99
+      value: 3.98
       objectReference: {fileID: 0}
     - target: {fileID: 6169696977278856876, guid: 3016897be250d544881e0a59186a958f,
         type: 3}
@@ -622,6 +622,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 6.81
       objectReference: {fileID: 0}
+    - target: {fileID: 4166264383618438, guid: aa6486dba1806d549898fb70a6716d4a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.044
+      objectReference: {fileID: 0}
+    - target: {fileID: 4166264383618438, guid: aa6486dba1806d549898fb70a6716d4a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 8.275
+      objectReference: {fileID: 0}
     - target: {fileID: 4242920836081390, guid: aa6486dba1806d549898fb70a6716d4a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.83
@@ -725,6 +733,11 @@ PrefabInstance:
     - target: {fileID: 4990687145510478, guid: aa6486dba1806d549898fb70a6716d4a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 23705992844617104, guid: aa6486dba1806d549898fb70a6716d4a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 29616638925730002, guid: aa6486dba1806d549898fb70a6716d4a,
         type: 3}
@@ -1105,12 +1118,12 @@ PrefabInstance:
     - target: {fileID: 6922548396064538416, guid: 60c3f73a7b9409940afe3e1d7c6bada9,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6922548396064538417, guid: 60c3f73a7b9409940afe3e1d7c6bada9,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6922548396064538423, guid: 60c3f73a7b9409940afe3e1d7c6bada9,
         type: 3}
@@ -1272,8 +1285,6 @@ MonoBehaviour:
   speed: 3
   damage: 20
   health: 100
-  deathEffect: {fileID: 5314741375309462130, guid: aafe750f0c5b5a94796501bef31a827e,
-    type: 3}
   rewardPrefab: {fileID: 8981744878992587339, guid: e4f41e5e24ed6194faf3fab846a11ad6,
     type: 3}
   explotionPrefab: {fileID: 3995945873794613430, guid: 0b96f9f92d2610a4f8c5664b7ac4e9ef,
@@ -1297,8 +1308,6 @@ MonoBehaviour:
   speed: 3
   damage: 20
   health: 100
-  deathEffect: {fileID: 5314741375309462130, guid: aafe750f0c5b5a94796501bef31a827e,
-    type: 3}
   rewardPrefab: {fileID: 8981744878992587339, guid: e4f41e5e24ed6194faf3fab846a11ad6,
     type: 3}
   explotionPrefab: {fileID: 3995945873794613430, guid: 0b96f9f92d2610a4f8c5664b7ac4e9ef,
@@ -1686,7 +1695,7 @@ PrefabInstance:
         type: 3}
       propertyPath: bulletPrefab
       value: 
-      objectReference: {fileID: 5314741375309462130, guid: aafe750f0c5b5a94796501bef31a827e,
+      objectReference: {fileID: 1926738966037843923, guid: 5ff7774b5e2517141a37969af65e4623,
         type: 3}
     - target: {fileID: 1466152897742369514, guid: 39d24e6d0406e334a8fba4719014edf3,
         type: 3}
@@ -1745,8 +1754,6 @@ MonoBehaviour:
   speed: 3
   damage: 20
   health: 100
-  deathEffect: {fileID: 5314741375309462130, guid: aafe750f0c5b5a94796501bef31a827e,
-    type: 3}
   rewardPrefab: {fileID: 8981744878992587339, guid: e4f41e5e24ed6194faf3fab846a11ad6,
     type: 3}
   explotionPrefab: {fileID: 3995945873794613430, guid: 0b96f9f92d2610a4f8c5664b7ac4e9ef,
@@ -1770,8 +1777,6 @@ MonoBehaviour:
   speed: 3
   damage: 20
   health: 100
-  deathEffect: {fileID: 5314741375309462130, guid: aafe750f0c5b5a94796501bef31a827e,
-    type: 3}
   rewardPrefab: {fileID: 8981744878992587339, guid: e4f41e5e24ed6194faf3fab846a11ad6,
     type: 3}
   explotionPrefab: {fileID: 3995945873794613430, guid: 0b96f9f92d2610a4f8c5664b7ac4e9ef,
@@ -1982,5 +1987,35 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6203751754668024800, guid: 37a2672bd1a1a3040af70f2a4db2bb3f,
         type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2005160315059869713, guid: a2c6197d7b1d4da49835c63f4f4daa52, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a2c6197d7b1d4da49835c63f4f4daa52, type: 3}
+--- !u!1 &7292960072142650526 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 526716457308859487, guid: a2c6197d7b1d4da49835c63f4f4daa52,
+    type: 3}
+  m_PrefabInstance: {fileID: 7292960072142650525}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7292960072142650527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7292960072142650526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a87718591d10bc54d98e41a778b9d9cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chaseRange: 1
+  animator: {fileID: 1470065365}
+  speed: 3
+  damage: 20
+  health: 100
+  rewardPrefab: {fileID: 5314741375309462130, guid: aafe750f0c5b5a94796501bef31a827e,
+    type: 3}
+  explotionPrefab: {fileID: 8981744878992587339, guid: e4f41e5e24ed6194faf3fab846a11ad6,
+    type: 3}
+  deadDelay: 4
+  attackRange: 4
