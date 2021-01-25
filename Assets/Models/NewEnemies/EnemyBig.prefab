@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 6637116825868572957}
   - component: {fileID: 1274677195981513100}
   - component: {fileID: 1509831797197163764}
-  - component: {fileID: 7292960072869414492}
+  - component: {fileID: 4983133609014587346}
+  - component: {fileID: 2005160315059869713}
   m_Layer: 14
   m_Name: Cube
   m_TagString: Enemy
@@ -95,7 +96,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7292960072869414492
+--- !u!114 &4983133609014587346
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -104,22 +105,35 @@ MonoBehaviour:
   m_GameObject: {fileID: 526716457308859487}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a87718591d10bc54d98e41a778b9d9cd, type: 3}
+  m_Script: {fileID: 11500000, guid: 26dcd2610e7520643800a3d4c01f530f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chaseRange: 1
+  firepoint: {fileID: 5829903215006983783}
+  bulletPrefab: {fileID: 919132149155446097, guid: aee53da694fdb04478765f7606c7d820,
+    type: 3}
+--- !u!114 &2005160315059869713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 526716457308859487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dc1176951cbf9c439321b3ffc989ca6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chaseRange: 0.5
   animator: {fileID: 1540221218535953278}
   speed: 3
   damage: 20
   health: 100
-  deathEffect: {fileID: 5314741375309462130, guid: aafe750f0c5b5a94796501bef31a827e,
-    type: 3}
   rewardPrefab: {fileID: 8981744878992587339, guid: e4f41e5e24ed6194faf3fab846a11ad6,
     type: 3}
   explotionPrefab: {fileID: 3995945873794613430, guid: 0b96f9f92d2610a4f8c5664b7ac4e9ef,
     type: 3}
   deadDelay: 4
-  attackRange: 4
+  attackRange: 20
 --- !u!1 &4914943008088485115
 GameObject:
   m_ObjectHideFlags: 0
@@ -148,7 +162,6 @@ Transform:
   m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
   m_Children:
   - {fileID: 5563277517786895386}
-  - {fileID: 5829903215006983783}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
@@ -161,7 +174,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5829903215006983783}
-  m_Layer: 14
+  m_Layer: 15
   m_Name: Firepoint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -175,12 +188,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5829903215006983576}
-  m_LocalRotation: {x: 0.086012885, y: -0.701856, z: 0.086012885, w: 0.701856}
-  m_LocalPosition: {x: -0.483, y: 2.305, z: -0.022999763}
+  m_LocalRotation: {x: 0.121640585, y: -0, z: -0, w: 0.9925743}
+  m_LocalPosition: {x: 0.06, y: 2.175, z: 0.468}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4914943008088485114}
-  m_RootOrder: 1
+  m_Father: {fileID: 4881862264051140868}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 13.974001, y: -90.00001, z: 0}
 --- !u!1001 &4914943009115238127
 PrefabInstance:

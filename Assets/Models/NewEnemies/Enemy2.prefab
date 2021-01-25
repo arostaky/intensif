@@ -23,7 +23,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7320746469897465650}
   - component: {fileID: 6408783183506773766}
-  - component: {fileID: 6879423148447796250}
+  - component: {fileID: 5166277595927220506}
   m_Layer: 14
   m_Name: Enemy2
   m_TagString: Enemy
@@ -59,7 +59,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.4057196, y: 0.75674534, z: 0.49160844}
   m_Center: {x: -0.034910172, y: 0.44797105, z: 0.003905028}
---- !u!114 &6879423148447796250
+--- !u!114 &5166277595927220506
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -68,7 +68,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7320746469897465653}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad7f12d5dcf0e3c4985eb7eee2b89706, type: 3}
+  m_Script: {fileID: 11500000, guid: a87718591d10bc54d98e41a778b9d9cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   chaseRange: 1
@@ -76,15 +76,12 @@ MonoBehaviour:
   speed: 3
   damage: 20
   health: 100
-  deathEffect: {fileID: 5314741375309462130, guid: aafe750f0c5b5a94796501bef31a827e,
-    type: 3}
   rewardPrefab: {fileID: 8981744878992587339, guid: e4f41e5e24ed6194faf3fab846a11ad6,
     type: 3}
   explotionPrefab: {fileID: 3995945873794613430, guid: 0b96f9f92d2610a4f8c5664b7ac4e9ef,
     type: 3}
   deadDelay: 4
   attackRange: 4
-  childrenToRotate: {fileID: 7591360266423907484}
 --- !u!95 &7320746469942862392
 Animator:
   serializedVersion: 3

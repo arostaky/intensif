@@ -11,15 +11,15 @@ public class EnemyBig : MonoBehaviour
     public float speed = 3.0f;
     public int damage = 20;
     public int health = 100;
-    public GameObject deathEffect;
+    // public GameObject deathEffect;
     private bool isDead = false;
     public GameObject rewardPrefab;
     public GameObject explotionPrefab;
     public float deadDelay = 4.0f;
     public float attackRange = 4.0f;
-    AnimationClip clip;
+    // AnimationClip clip;
     //public float timeReward = 1.0f;
-    private bool robotAttacks = false;
+    // private bool robotAttacks = false;
     private int shootOnce = 1;
     
     void Start(){
@@ -54,28 +54,28 @@ public class EnemyBig : MonoBehaviour
 
         }
         else if(currentState == "AttackState"){
-            animator.SetBool("isAttacking", true);
-            //AttackPlayer();
-            shootOnce+=1;
-            if(shootOnce>50){
-                shootOnce = 0;
-            }
+           animator.SetBool("isAttacking", true);
+            // shootOnce+=1;
+
          if (distance > attackRange)
             currentState = "ChaseState";
         }
+        // if(shootOnce>50){
+        //     shootOnce = 0;
+        // }
     }
     public void TakeDamage(int damage){
         health-= damage;
         if(health<=0){
            Die();
             Instantiate(explotionPrefab, transform.position, Quaternion.identity);
-            Destroy(explotionPrefab,0.5f);
+            //Destroy(explotionPrefab,0.5f);
             Instantiate(rewardPrefab, transform.position, Quaternion.identity);
         }
     }
     void Die(){
         isDead = true;
-        Instantiate(deathEffect, transform.position, Quaternion.identity);
+        // Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
         //StartCoroutine (destroyLater());
     }
@@ -87,10 +87,11 @@ public class EnemyBig : MonoBehaviour
          }
     }
     void AttackPlayer(){
-        EnemyWeapon enemyWeapon = gameObject.GetComponent<EnemyWeapon>();
-        if(shootOnce == 0){
-            enemyWeapon.Shoot();
-        }
+        animator.SetBool("isAttacking", true);
+        // EnemyWeapon enemyWeapon = gameObject.GetComponent<EnemyWeapon>();
+        // if(shootOnce == 0){
+        //     enemyWeapon.Shoot();
+        // }
     }
     IEnumerator destroyLater(){
         //animator.SetBool("isDead", true);

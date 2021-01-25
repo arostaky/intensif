@@ -30,6 +30,7 @@ public class PlayerControllerv2 : MonoBehaviour{
     public HealthBar healthBar;
     private int shootOnce = 0;
     public int lives = 1;
+    
     // Rigidbody m_Rigidbody;
     
     private void Awake() {

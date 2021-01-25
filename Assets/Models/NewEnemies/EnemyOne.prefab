@@ -89,10 +89,8 @@ MonoBehaviour:
   chaseRange: 1
   animator: {fileID: 6169696975814619066}
   speed: 3
-  damage: 20
+  damage: 5
   health: 100
-  deathEffect: {fileID: 5314741375309462130, guid: aafe750f0c5b5a94796501bef31a827e,
-    type: 3}
   rewardPrefab: {fileID: 8981744878992587339, guid: e4f41e5e24ed6194faf3fab846a11ad6,
     type: 3}
   explotionPrefab: {fileID: 3995945873794613430, guid: 0b96f9f92d2610a4f8c5664b7ac4e9ef,

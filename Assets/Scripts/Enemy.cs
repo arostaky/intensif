@@ -11,7 +11,7 @@ public class Enemy : MonoBehaviour
     public float speed = 3.0f;
     public int damage = 20;
     public int health = 100;
-    public GameObject deathEffect;
+    //public GameObject deathEffect;
     private bool isDead = false;
     public GameObject rewardPrefab;
     public GameObject explotionPrefab;
@@ -68,7 +68,7 @@ public class Enemy : MonoBehaviour
     }
     void Die(){
         isDead = true;
-        Instantiate(deathEffect, transform.position, Quaternion.identity);
+        //Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
         //StartCoroutine (destroyLater());
     }
